@@ -17,11 +17,11 @@ export default function Navbar() {
           </li>
 
           <li className="py-2">
-            <Link href="/">Recipe</Link>
+            <Link href="/recipes">Recipe</Link>
           </li>
 
           <li className="py-2">
-            <Link href="/">About us</Link>
+            <Link href="about">About us</Link>
           </li>
 
           <li className="py-2 bg-[#eb4a36] px-6 rounded-md text-white content-center">
