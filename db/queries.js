@@ -5,13 +5,16 @@ import {
   replaceMongoIdInObject,
 } from "@/app/utils/data-util";
 import mongoose from "mongoose";
+import { dbConnect } from "./connectDB";
 
 async function getAllRecipes() {
+  await dbConnect();
   const allRecipes = await recipesModel.find().lean();
   return replaceMongoIdInArray(allRecipes);
 }
 
 async function getRecipeById(recipeId) {
+  await dbConnect();
   if (!mongoose.Types.ObjectId.isValid(recipeId)) {
     return null;
   }
@@ -20,15 +23,19 @@ async function getRecipeById(recipeId) {
 }
 
 async function getRecipesByCategoryId(categoryId) {
+  await dbConnect();
   const recipes = await recipesModel.find({ category: categoryId }).lean();
   return replaceMongoIdInArray(recipes);
 }
 
 async function createUser(user) {
+  await dbConnect();
   return await userModel.create(user);
 }
 
 async function findUserByCredential(credentials) {
+  await dbConnect();
+  console.log(credentials);
   const user = await userModel.findOne(credentials).lean();
 
   if (user) {
@@ -38,6 +45,7 @@ async function findUserByCredential(credentials) {
 }
 
 async function addFavourites(userId, recipeId) {
+  await dbConnect();
   const user = await userModel.findById(userId);
 
   if (user) {
