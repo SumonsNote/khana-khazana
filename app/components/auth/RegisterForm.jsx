@@ -4,21 +4,21 @@ export default function RegisterForm() {
   return (
     <form class="login-form" action={registerUser}>
       <div>
-        <label for="fname">First Name</label>
+        <label htmlFor="fname">First Name</label>
         <input type="text" name="firstName" id="fname" />
       </div>
 
       <div>
-        <label for="lname">Last Name</label>
+        <label htmlFor="lname">Last Name</label>
         <input type="text" name="lastName" id="lname" />
       </div>
       <div>
-        <label for="email">Email Address</label>
+        <label htmlFor="email">Email Address</label>
         <input type="email" name="email" id="email" />
       </div>
 
       <div>
-        <label for="password">Password</label>
+        <label htmlFor="password">Password</label>
         <input type="password" name="password" id="password" />
       </div>
 
