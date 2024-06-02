@@ -1,5 +1,6 @@
 import { dbConnect } from "@/db/connectDB";
 import { Poppins } from "next/font/google";
+import image from "../public/cover.png";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 import AuthProvider from "./providers/AuthProvider";
@@ -14,6 +15,9 @@ const poppins = Poppins({
 export const metadata = {
   title: "Khana Khazana - Home",
   description: "An application to serve food.",
+  openGraph: {
+    images: [image],
+  },
 };
 
 export default async function RootLayout({ children }) {

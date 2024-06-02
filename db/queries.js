@@ -35,7 +35,7 @@ async function createUser(user) {
 
 async function findUserByCredential(credentials) {
   await dbConnect();
-  console.log(credentials);
+
   const user = await userModel.findOne(credentials).lean();
 
   if (user) {
