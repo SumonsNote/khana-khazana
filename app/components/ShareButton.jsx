@@ -48,7 +48,7 @@ export default function ShareButtons({ recipe }) {
 
       <a
         className="whatsapp"
-        href={`https://api.whatsapp.com/send?text=$${url}`}
+        href={`https://api.whatsapp.com/send?${url}`}
         target="_blank"
       >
         <Image src={whatsapp} alt="whatsapp" width={30} height={20} />
