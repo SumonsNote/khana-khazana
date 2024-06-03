@@ -1,4 +1,4 @@
-import FoodCardDetails from "@/app/components/FoorCardDetails";
+import FoodCardDetails from "@/app/components/FoodCardDetails";
 import { getRecipeById } from "@/db/queries";
 import { notFound } from "next/navigation";
 
