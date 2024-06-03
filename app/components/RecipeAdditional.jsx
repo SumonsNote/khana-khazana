@@ -12,6 +12,11 @@ export default function RecipeAdditional({ recipe }) {
 
   const isFavourite = auth?.favourites.includes(recipe.id);
   const [fav, setFav] = useState(isFavourite);
+  const [toggleShare, setToggleShare] = useState(false);
+
+  const toggleShareButton = () => {
+    setToggleShare(!toggleShare);
+  };
 
   const addFav = () => {
     if (auth) {
@@ -64,8 +69,11 @@ export default function RecipeAdditional({ recipe }) {
         <span>Favourite</span>
       </div>
 
-      <div class="flex gap-2 text-gray-600 cursor-pointer hover:text-[#0E79F6]">
-        {/* <svg
+      <div
+        onClick={() => toggleShareButton()}
+        class="flex gap-2 text-gray-600 cursor-pointer hover:text-[#0E79F6]"
+      >
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -82,9 +90,9 @@ export default function RecipeAdditional({ recipe }) {
           <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
           <path d="M8.7 10.7l6.6 -3.4" />
           <path d="M8.7 13.3l6.6 3.4" />
-        </svg> */}
-        <ShareButtons recipe={recipe} />
-        {/* <span>Share</span> */}
+        </svg>
+        <span>Share</span>
+        {toggleShare && <ShareButtons recipe={recipe} />}
       </div>
     </div>
   );
