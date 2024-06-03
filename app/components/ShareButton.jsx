@@ -9,7 +9,6 @@ import whatsapp from "../../public/whatsapp.svg";
 export default function ShareButtons({ recipe }) {
   const url = window.location.href;
   const title = recipe?.title;
-  const des = recipe.description;
 
   return (
     <motion.div
