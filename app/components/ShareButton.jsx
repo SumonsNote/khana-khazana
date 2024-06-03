@@ -7,8 +7,8 @@ import twitter from "../../public/twitter.svg";
 import whatsapp from "../../public/whatsapp.svg";
 
 export default function ShareButtons({ recipe }) {
-  const url = window.location.href;
-  const title = recipe?.title;
+  const url = encodeURIComponent(document.location.href);
+  const title = encodeURIComponent(recipe?.title);
 
   return (
     <motion.div
