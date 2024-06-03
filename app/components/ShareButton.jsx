@@ -7,9 +7,9 @@ import twitter from "../../public/twitter.svg";
 import whatsapp from "../../public/whatsapp.svg";
 
 export default function ShareButtons({ recipe }) {
-  const link = window.location.href;
+  const url = window.location.href;
   const title = recipe?.title;
-  const image = recipe.image;
+  const des = recipe.description;
 
   return (
     <motion.div
@@ -24,7 +24,7 @@ export default function ShareButtons({ recipe }) {
     >
       <a
         className="facebook"
-        href={`https://www.facebook.com/share.php?u=${link}`}
+        href={`https://www.facebook.com/share.php?u=${url}`}
         target="_blank"
       >
         <Image src={facebook} alt="facebook" width={30} height={20} />
@@ -32,7 +32,7 @@ export default function ShareButtons({ recipe }) {
 
       <a
         className="twitter"
-        href={`http://twitter.com/share?&url=${link}&text=${image}`}
+        href={`http://twitter.com/share?&url=${url}&text=${title}`}
         target="_blank"
       >
         <Image src={twitter} alt="twitter" width={30} height={20} />
@@ -40,7 +40,7 @@ export default function ShareButtons({ recipe }) {
 
       <a
         className="linkedin"
-        href={`https://www.linkedin.com/sharing/share-offsite/?url=${link}`}
+        href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}
         target="_blank"
       >
         <Image src={linkedin} alt="linkedin" width={30} height={20} />
@@ -48,7 +48,7 @@ export default function ShareButtons({ recipe }) {
 
       <a
         className="whatsapp"
-        href={`https://api.whatsapp.com/send?text=${image}: ${link}`}
+        href={`https://api.whatsapp.com/send?text=${title}: ${url}`}
         target="_blank"
       >
         <Image src={whatsapp} alt="whatsapp" width={30} height={20} />
@@ -56,7 +56,7 @@ export default function ShareButtons({ recipe }) {
 
       <a
         className="telegram"
-        href={`https://telegram.me/share/url?url=${link}&text=${image}`}
+        href={`https://telegram.me/share/url?url=${url}&text=${title}`}
         target="_blank"
       >
         <Image src={telegram} alt="telegram" width={30} height={20} />

@@ -14,9 +14,6 @@ const poppins = Poppins({
 export const metadata = {
   title: "Khana Khazana - Home",
   description: "An application to serve food.",
-  // openGraph: {
-  //   images: [image],
-  // },
 };
 
 export default async function RootLayout({ children }) {
