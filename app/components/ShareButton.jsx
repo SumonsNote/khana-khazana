@@ -9,7 +9,6 @@ import whatsapp from "../../public/whatsapp.svg";
 export default function ShareButtons({ recipe }) {
   const url = window.location.href;
   const title = recipe?.title;
-  const phone_number = "01794556830";
 
   return (
     <motion.div
@@ -48,7 +47,7 @@ export default function ShareButtons({ recipe }) {
 
       <a
         className="whatsapp"
-        href={`https://api.whatsapp.com/send?phone=${phone_number}&text=${title}%20${url}`}
+        href={`https://api.whatsapp.com/send?text=${title}: ${url}`}
         target="_blank"
       >
         <Image src={whatsapp} alt="whatsapp" width={30} height={20} />
