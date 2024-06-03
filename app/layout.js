@@ -1,5 +1,6 @@
 import { dbConnect } from "@/db/connectDB";
 import { Poppins } from "next/font/google";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 import AuthProvider from "./providers/AuthProvider";
@@ -25,6 +26,7 @@ export default async function RootLayout({ children }) {
           <Navbar />
           {children}
         </AuthProvider>
+        <Footer />
       </body>
     </html>
   );

@@ -43,7 +43,7 @@ export default function Navbar() {
             </Link>
           </li>
 
-          <li className="py-2 bg-[#eb4a36] px-6 rounded-md text-white content-center">
+          <li className="py-2 ">
             <SignInOut />
           </li>
         </ul>
